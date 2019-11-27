@@ -13,7 +13,6 @@ namespace Syy.Tools
         public static void Open()
         {
             var window = CreateWindow<AssetMove>(nameof(AssetMove));
-            window.minSize = new Vector2(400, 200);
             window.Show();
         }
 
@@ -44,8 +43,9 @@ namespace Syy.Tools
 
             using (new EditorGUILayout.HorizontalScope())
             {
-                EditorGUILayout.LabelField("Source assets");
-                if (GUILayout.Button("Clear", GUILayout.Width(100)))
+                EditorGUILayout.LabelField("Source assets", GUILayout.Width(80));
+                GUILayout.FlexibleSpace();
+                if (GUILayout.Button("Clear", GUILayout.Width(80)))
                 {
                     _targets.Clear();
                 }
